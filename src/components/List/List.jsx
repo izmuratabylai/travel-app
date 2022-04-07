@@ -13,13 +13,11 @@ import useStyles from "./styles.js";
 import PlaceDetails from '../PlaceDetailes/PlaceDetailes'
 
 
-const List = ({places}) => {
-
+const List = ({ places }) => {
   const classes = useStyles();
   const [type, setType] = useState("restaurants");
   const [rating, setRating] = useState(0);
 
- 
   return (
     <div className={classes.container}>
       <Typography variant="h4">
@@ -52,13 +50,13 @@ const List = ({places}) => {
       </FormControl>
       <Grid container spacing={3} className={classes.list}>
         {places?.map((place, i) => (
-          <Grid  key={i} item xs={12}>
-            <PlaceDetails place={ place}/>
+          <Grid key={i} item xs={12}>
+            <PlaceDetails place={place} />
           </Grid>
         ))}
       </Grid>
     </div>
   );
-}
+};
 
 export default List
