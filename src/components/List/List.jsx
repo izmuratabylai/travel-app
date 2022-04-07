@@ -13,25 +13,17 @@ import useStyles from "./styles.js";
 import PlaceDetails from '../PlaceDetailes/PlaceDetailes'
 
 
-const List = () => {
+const List = ({places}) => {
 
   const classes = useStyles();
   const [type, setType] = useState("restaurants");
-  const [rating, setRating] = useState("All");
+  const [rating, setRating] = useState(0);
 
-  const places = [
-    { name: "Cool Place" },
-    { name: "Best Beer" },
-    { name: "Best Steak" },
-    { name: "Cool Place" },
-    { name: "Best Beer" },
-    { name: "Best Steak" },
-  ];
-
+ 
   return (
     <div className={classes.container}>
       <Typography variant="h4">
-        Restaurants, Hotels, & Attractions around you
+        Restaurants, Hotels & Attractions around you
       </Typography>
       <FormControl className={classes.formControl}>
         <InputLabel id="type">Type</InputLabel>
